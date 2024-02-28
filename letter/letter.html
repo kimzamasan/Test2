@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="designLetter.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Letter for Aira Mei Aquino Tapiador</title>
+
+</head>
+<body>
+
+<img src="img/clouds.png" alt="cloud" class="cloud cloud1">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud2">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud3">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud4">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud5">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud6">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud7">
+<img src="img/clouds.png" alt="cloud" class="cloud cloud8">
+<!-- Add more cloud elements with different positions and sizes -->
+
+<div class="envelope" onclick="toggleEnvelope()">
+    <div class="container">
+        <h1>Love Letter for <br>Aira Mei Aquino Cabural (Tapiador)</h1>
+        <h3>From: Mahal/Czar &#10084;</h3>
+        <p>Dear Mahal,</p>
+        <p>Happy Monthsary! I just want to take this moment to express my deepest gratitude for your unwavering support, and your boundless love. You are truly an extraordinary person, and I feel incredibly lucky to have you in my life.</p>
+        <p>I know you've been through a lot lately, but please remember that I am always here for you, no matter what. Your strength and resilience inspire me every day, and I am endlessly grateful to have you as my partner.</p>
+        <p>Thank you for being the amazing person that you are. I cherish every moment we spend time together, and I look forward to many more monthsaries with you, or better "Anniversaries".</p>
+        <div class="signature">
+            <p>I love you mahal &#10084;</p>
+            <p>Your Mahal, Czar.</p>
+        </div>
+        <div class="profile-img">
+            <img src="img/image1.jpg" alt="Profile Image">
+        </div>
+        <div class="profile-img2">
+            <img src="img/image2.jpg" alt="Profile Image 2">
+        </div>
+    </div>
+</div>
+
+<img src="img/flower.png" alt="flower" class="flower flower1">
+<img src="img/flower.png" alt="flower" class="flower flower2">
+<img src="img/flower.png" alt="flower" class="flower flower3">
+
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly1">
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly2">
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly3">
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly4">
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly5">
+<img src="img/butterfly.png" alt="butterfly" class="butterfly butterfly6">
+<!-- Add more butterfly images as needed -->
+
+<script>
+    function toggleEnvelope() {
+        var envelope = document.querySelector('.envelope');
+        envelope.classList.toggle('open');
+        
+        var profileImg = document.querySelector('.profile-img');
+        var profileImg2 = document.querySelector('.profile-img2');
+        var flowers = document.querySelectorAll('.flower');
+        var butterflies = document.querySelectorAll('.butterfly');
+        
+        if (envelope.classList.contains('open')) {
+            // Show profile images when envelope is opened
+            profileImg.style.display = 'block';
+            profileImg2.style.display = 'block';
+            // Move flowers and butterflies to the bottom left
+            flowers.forEach(function(flower) {
+                flower.style.top = 'auto';
+                flower.style.bottom = '20px';
+                flower.style.left = '20px';
+            });
+            butterflies.forEach(function(butterfly) {
+                butterfly.style.top = 'auto';
+                butterfly.style.bottom = '20px';
+                butterfly.style.left = '20px';
+            });
+        } else {
+            // Hide profile images when envelope is closed
+            profileImg.style.display = 'none';
+            profileImg2.style.display = 'none';
+            // Return flowers and butterflies to their original positions
+            flowers.forEach(function(flower, index) {
+                flower.style.top = (index === 0) ? '20px' : ((index === 1) ? '120px' : 'auto');
+                flower.style.bottom = 'auto';
+                flower.style.left = (index === 2) ? '50%' : ((index === 0) ? '20px' : 'auto');
+                flower.style.transform = (index === 2) ? 'translateX(-50%)' : 'none';
+            });
+            butterflies.forEach(function(butterfly, index) {
+                butterfly.style.top = (index === 0 || index === 1) ? '50px' : ((index === 2) ? '200px' : 'auto');
+                butterfly.style.bottom = 'auto';
+                butterfly.style.left = (index === 2) ? '60px' : ((index === 3) ? '200px' : ((index === 4) ? '100px' : '400px'));
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
